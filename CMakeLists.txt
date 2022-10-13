@@ -1,0 +1,23 @@
+cmake_minimum_required (VERSION 3.14)
+
+set(PRJ_NAME CipherControlSystemLibrary)
+
+set(PRJ_VER_MAJOR 1)
+set(PRJ_VER_MINOR 2)
+set(PRJ_VER_PATCH 8)
+set(PRJ_VER_REVISION 8)
+set(PRJ_VER_CMN ${PRJ_VER_MAJOR}.${PRJ_VER_MINOR}.${PRJ_VER_PATCH})
+set(PRJ_VER_FULL ${PRJ_VER_CMN}.${PRJ_VER_REVISION})
+
+message(STATUS [Library Version]:[${PRJ_VER_FULL}])
+option (BUILD_SHARED_LIBS "Build the library as shared library" ON)
+project(${PRJ_NAME} VERSION ${PRJ_VER_FULL} LANGUAGES CXX )
+set (CMAKE_CONFIGURATION_TYPES Debug;Release)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED YES)
+set(CMAKE_CXX_EXTENSIONS NO)
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+set(CMAKE_CONFIGURATION_TYPES Debug;Release)
+
+add_subdirectory(src)
